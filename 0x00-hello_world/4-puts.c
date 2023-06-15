@@ -1,15 +1,12 @@
-#include <stdio.h>
-
+#include <stdio.hi>
 /*
- *A program that outputs
- Programming is like building a multilingual puzzle
- *
- * */
-
- int main(void){
- 
- 
- puts("\"Programming is like building a multilingual puzzle");
- 
- return(0);
- }
+*main-Entry point
+*
+*return:Always 0
+*
+*/
+int main(void)
+{
+puts("\"Programming is like building a multilingual puzzle");
+return (0);
+}
