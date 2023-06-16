@@ -8,10 +8,10 @@
  */
 int main(void)
 {
-	char alph[26] = "abcdfghijklmnoprstuvwxyz";
+	char alph[25] = "abcdfghijklmnoprstuvwxyz";
 	int num = 0;
 
-	while (num < 26)
+	while (num < 25)
 	{
 		putchar(alph[num]);
 		num++;
