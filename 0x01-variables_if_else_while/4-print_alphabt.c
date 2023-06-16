@@ -14,7 +14,7 @@ int main(void)
 	while (num < 26)
 	{
 		putchar(alph[num]);
-		if (num == 4 || num == 17)
+		if (num == 4 &&  num == 17)
 		{
 			continue;
 		}
