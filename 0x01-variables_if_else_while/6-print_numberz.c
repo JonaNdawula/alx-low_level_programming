@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.ih>
 /**
  * main - program that prints all single digit numbers of base 10 from 0
  *
@@ -8,11 +8,11 @@ int main(void)
 {
 	int i;
 
-	char nums[10] = "0123456789";
+	
 
-	for (i = 0; i < 11; i++)
+	for (i = 48; i < 58; i++)
 	{
-		putchar(nums[i]);
+		putchar(i);
 	}
 	putchar('\n');
 	return (0);
