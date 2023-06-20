@@ -18,7 +18,7 @@ n = m % 10;
 if (n < 0)
 {
 n = -n;
-_putchar(n + '0');
 }
+_putchar(n + '0');
 return (n);
 }
