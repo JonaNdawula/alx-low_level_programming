@@ -16,14 +16,5 @@ if (z > 0)
 _putchar('+');
 return (1);
 }
-else if (z < 0)
-{
-_putchar('-');
-return (-1);
-}
-else
-{
-return (0);
-}
-
+else if (n == 0)
 }
