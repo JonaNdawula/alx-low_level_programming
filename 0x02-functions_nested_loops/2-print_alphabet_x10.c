@@ -11,6 +11,7 @@ int num;
 num = 0;
 while (num < 10)
 {
+car = 'a';
 while (car <= 'z')
 {
 _putchar(car);
