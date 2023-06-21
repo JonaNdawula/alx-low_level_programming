@@ -21,7 +21,7 @@ else
 {
 k += j;
 j = k - j;
-print(", %ld", k);
+printf(", %ld", k);
 }
 i++;
 }
