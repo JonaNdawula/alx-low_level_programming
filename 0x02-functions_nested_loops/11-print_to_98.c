@@ -22,7 +22,7 @@ printf("%d, ", a);
 
 else if (a == 98)
 
-printf("%d\n ", a);
+printf("%d\n", a);
 
 }
 }
