@@ -36,7 +36,7 @@ printf("%d, ", b);
 
 else if (b == 98)
 
-printf("%d\n ", b);
+printf("%d\n", b);
 
 }
 }
