@@ -10,14 +10,14 @@ void more_numbers(void)
 	int r;
 	int c;
 
-	for (r = 0; r <= 10; r++)
+	for (r = 0; r < 11; r++)
 	{
 		_putchar('\n');
 
-		for (c = 0; c <= 14; c++)
+		for (c = 0; c < 15; c++)
 		{
 			_putchar(c);
-			_putchar('\n');
+			
 		}
 	}
 
