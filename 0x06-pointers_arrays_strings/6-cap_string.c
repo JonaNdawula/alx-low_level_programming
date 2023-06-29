@@ -1,52 +1,36 @@
 #include "main.h"
 /**
- *char *cap_string - function that  string.
- *
- *@s: string to be capitalized
- *
- * Return: s
- *
- *
+ * _indexOf - returns boolean if special  character
+ * @a: character to return
+ * Return: true or false
+ */
+int _indexOf(char a)
+{
+	int i;
+	char capArr[13] = {'\n', '\t', ' ', '.', ',', ';', ',', '!', '?', '(',
+		')', '{', '}'};
+	for (i = 0; i < 13; i++)
+	{
+		if (capArr[i] == a)
+			return (1);
+	}
+	return (0);
+}
+/**
+ * cap_string - capitalizes the string
+ * @s: string
+ * Return: the string capitalized
  */
 char *cap_string(char *s)
 {
+	int i;
 
-	int capnext = 1;
-
-	while (*s != '\0')
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (capnext && (*s >= 'a' && *s <= 'z'))
-		{
-			*s -= 'a' - 'A';
-
-		}
-
-
-		if (*s == ' ' || *s == '\t' || (*s >= '0' && *s <= '9'))
-		{
-			capnext = 1;
-		}
-		else  if (*s == ',' || *s == ';' || *s == '.')
-		{
-			capnext = 1;
-
-		}
-		else if (*s == '!' || *s == '?' || *s == '"')
-		{
-			capnext = 1;
-		}
-		else if (*s == '(' || *s == '{' || *s == '}' || *s == '-')
-		{
-			capnext = 1;
-		}
-		else
-		{
-			capnext = 0;
-
-		}
-
-		s++;
+		if (_indexOf(s[i]))
+			continue;
+		if (s[i] >= 'a' && s[i] <= 'z' && (_indexOf(s[i - 1]) || i == 0))
+			s[i] = s[i] - 32;
 	}
 	return (s);
-
 }
