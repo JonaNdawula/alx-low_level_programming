@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- *char *cap_string - function that capitalizes all words of a string.
+ *char *cap_string - function that  string.
  *
  *@s: string to be capitalized
  *
@@ -22,7 +22,7 @@ char *cap_string(char *s)
 		}
 
 
-		if (*s == ' ')
+		if (*s == ' ' || *s == '-' || *s == '\t' || (*s >= '0' && *s <= '9'))
 		{
 			capnext = 1;
 		}
