@@ -26,10 +26,18 @@ char *cap_string(char *s)
 		{
 			capnext = 1;
 		}
-		else  if ((*s >= 33 && *s <= 46) || (*s >= '0' && *s <= '9'))
+		else  if (*s == ',' || *s == ';' || *s == '.')
 		{
 			capnext = 1;
 
+		}
+		else if (*s == '!' || *s == '?' || *s == '"')
+		{
+			capnext = 1;
+		}
+		else if (*s == '(' || *s == '{' || *s == '}')
+		{
+			capnext = 1;
 		}
 		else
 		{
