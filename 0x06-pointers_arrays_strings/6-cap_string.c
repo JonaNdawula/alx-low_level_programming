@@ -22,7 +22,7 @@ char *cap_string(char *s)
 		}
 
 
-		if (*s == ' ' || *s == '\t' || *s == '\n')
+		if (*s == ' ' || *s == '\t' || *s == '\n' || (*s >= '0' && *s <= '9'))
 		{
 			capnext = 1;
 		}
