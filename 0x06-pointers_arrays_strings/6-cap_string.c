@@ -22,9 +22,14 @@ char *cap_string(char *s)
 		}
 
 
-		if (*s == ' ' || *s == '-' || *s == '\t' || (*s >= '0' && *s <= '9'))
+		if (*s == ' ' || *s == '\t')
 		{
 			capnext = 1;
+		}
+		else  if ((*s >= 33 && *s <= 46) || (*s >= '0' && *s <= '9'))
+		{
+			capnext = 1;
+
 		}
 		else
 		{
