@@ -23,7 +23,7 @@ void print_diagsums(int *a, int size)
 
 
 	}
-	printf("%d,", diagSum1);
-	printf("%d", diagSum2);
+	printf("%d, ", diagSum1);
+	printf("%d\n", diagSum2);
 
 }
