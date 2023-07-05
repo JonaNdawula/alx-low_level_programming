@@ -13,4 +13,6 @@ int is_palindrome(char *s);
 int wildcmp(char *s1, char *s2);
 int other_sqrt_recursion( int n, int j);
 int checkout_if_is_prime(int n, int k);
+int string_length_recursion(char *s);
+int check_if_palindrome(char *s, int k, int length);
 #endif
