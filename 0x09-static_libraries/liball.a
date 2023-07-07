@@ -1,0 +1,577 @@
+!<arch>
+0-isupper.c/    0           0     0     644     276       `
+#include "main.h"
+/**
+ *_isupper - checks if a character is upper case
+ *
+ *@c: is the char to be checked by function
+ *
+ *Return: 1 if character is upper case, else 0
+ *
+ */
+
+int _isupper(int c)
+{
+	if (c >= 'A' && c <= 'Z')
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
+
+
+}
+
+0-memset.c/     0           0     0     644     335       `
+#include "main.h"
+/**
+ * _memset - fills memory with a constant byte.
+ *@s: pointer
+ *@b: constant byte in s
+ *@n: bytes to be filled
+ *Return: s
+ */
+char *_memset(char *s, char b, unsigned int n)
+{
+
+	unsigned char valInBytes = (unsigned char) b;
+
+	unsigned int x = 0;
+
+	while (x < n)
+	{
+		s[x] = valInBytes;
+		x++;
+	}
+	return (s);
+}
+
+
+0-strcat.c/     0           0     0     644     378       `
+#include "main.h"
+/**
+ *char *_strcat - function that concatenates two strings
+ *
+ *@dest:string to which we append
+ *
+ *@src:string to be appended
+ *
+ * Return: dest
+ */
+char *_strcat(char *dest, char *src)
+{
+	char *point = dest;
+
+	while (*point != '\0')
+	{
+		point++;
+	}
+
+	while (*src != '\0')
+	{
+
+		*point = *src;
+		point++;
+		src++;
+	}
+
+	*point = '\0';
+
+	return (dest);
+
+}
+
+100-atoi.c/     0           0     0     644     609       `
+#include "main.h"
+/**
+ *_atoi - coverts strings to integer
+ *
+ *@s: string to converted
+ *
+ *Return: the int coverted from from the string
+ */
+int _atoi(char *s)
+{
+	int i, d, n, length, f, digit;
+
+	i = 0;
+	d = 0;
+	n = 0;
+	length = 0;
+	f = 0;
+	digit = 0;
+
+	while (s[length] != '\0')
+		length++;
+
+	while (i < length && f == 0)
+	{
+		if (s[i] == '-')
+			++d;
+
+		if (s[i] >= '0' && s[i] <= '9')
+		{
+			digit = s[i] - '0';
+			if (d % 2)
+				digit = -digit;
+			n = n * 10 + digit;
+			f = 1;
+
+			if (s[i + 1] < '0' || s[i + 1] > '9')
+
+				break;
+
+			f = 0;
+		}
+		i++;
+
+
+	}
+	if (f == 0)
+		return (0);
+
+	return (n);
+
+}
+
+1-isdigit.c/    0           0     0     644     251       `
+#include "main.h"
+/**
+ *_isdigit - a function that checks for a digit (0 through 9).
+ *
+ *@c: the number to be checked
+ *
+ *Return: 1 if c is a digit and 0 if not
+ */
+int _isdigit(int c)
+{
+	if (c >= 48 && c <= 57)
+	{
+		return (1);
+	}
+
+	return (0);
+}
+
+
+1-memcpy.c/     0           0     0     644     344       `
+#include "main.h"
+/**
+ *_memcpy - a function that copies memory area.
+ *@dest: represents destination memory
+ *@src: points to memory area to be copies
+ *@n: bytes to be copied
+ *Return: dest
+ *
+ */
+char *_memcpy(char *dest, char *src, unsigned int n)
+{
+
+	unsigned int y = 0;
+
+	while (y < n)
+	{
+		dest[y] = src[y];
+		y++;
+	}
+	return (dest);
+}
+
+1-strncat.c/    0           0     0     644     435       `
+#include "main.h"
+/**
+ *char *_strncat - function that concatenates two strings
+ *
+ *@dest: string to append to
+ *
+ *@src: string to be appended to the dest
+ *
+ *@n: bytes from src
+ *
+ *Return: dest
+ */
+char *_strncat(char *dest, char *src, int n)
+{
+
+	char *point = dest;
+
+	while (*point != '\0')
+	{
+		point++;
+	}
+
+	while (*src != '\0' && n > 0)
+	{
+		*point = *src;
+		point++;
+		src++;
+		n--;
+	}
+
+	*point = '\0';
+
+	return (dest);
+
+}
+
+
+
+2-strchr.c/     0           0     0     644     355       `
+#include "main.h"
+#include <stddef.h>
+/**
+ * *_strchr - a function that locates a character in a string.
+ *@s: represents current chracter
+ *@c: represents character being searched for
+ *
+ *Return: s
+ */
+char *_strchr(char *s, char c)
+{
+	int i = 0;
+
+	for (i = 0; s[i] >= '\0'; i++)
+	{
+
+		if (s[i] == c)
+		{
+
+			return (s + i);
+		}
+
+
+	}
+	return (NULL);
+}
+
+
+2-strlen.c/     0           0     0     644     234       `
+#include "main.h"
+/**
+ *_strlen - returns the length of a string
+ *
+ * @s:string whose length is to be counted
+ *
+ * Return: declared integer
+ */
+int _strlen(char *s)
+{
+	int l = 0;
+
+	while (s[l] != '\0')
+	{
+		l++;
+	}
+	return (l);
+
+}
+
+2-strncpy.c/    0           0     0     644     358       `
+#include "main.h"
+
+/**
+ *char*_strcpy - a function that copies the string pointed to by src
+ *
+ *@dest: copy to this
+ *
+ *@src: copy from this
+ *
+ *Return: a string
+ */
+char *_strcpy(char *dest, char *src)
+{
+	int x = 0;
+
+	int y = 0;
+
+	while (*(src + x) != '\0')
+	{
+		x++;
+	}
+	for (; y < x; y++)
+	{
+		dest[y] = src[y];
+	}
+	dest[x] = '\0';
+
+	return (dest);
+
+}
+3-islower.c/    0           0     0     644     275       `
+#include "main.h"
+/**
+ *_islower - checks if a character is lower case
+ *
+ *@x: is the char to be checked by function
+ *
+ *Return: 1 if character is lower case, else 0
+ *
+ */
+
+int _islower(int x)
+{
+	if (x >= 'a' && x <= 'z')
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
+
+
+}
+
+3-puts.c/       0           0     0     644     244       `
+#include "main.h"
+/**
+ *_puts -  prints string, followed by a new line, to stdout
+ *
+ *@str: holds the string to be printed
+ */
+void _puts(char *str)
+{
+	int a = 0;
+
+	while (str[a] != '\0')
+	{
+
+		_putchar(str[a]);
+
+		a++;
+
+	}
+	_putchar('\n');
+}
+3-strcmp.c/     0           0     0     644     331       `
+#include "main.h"
+/**
+ *_strcmp - a function that compares two strings.
+ *
+ *@s1: string to be compared to s2
+ *
+ *@s2:string to be compared to s1
+ *
+ *Return: 0 if strings same
+ *
+ */
+int _strcmp(char *s1, char *s2)
+{
+	while (*s1 == *s2)
+	{
+
+		if (*s1 == '\0')
+		{
+
+			return (0);
+		}
+
+		s1++;
+		s2++;
+
+	}
+
+	return (*s1 - *s2);
+}
+
+3-strspn.c/     0           0     0     644     523       `
+#include "main.h"
+#include <stddef.h>
+/**
+ * _strspn - function that gets the length of a prefix substring.
+ *@s: pointer to the null terminated string to be scanned
+ *@accept:pointer to the null terminated string containing the character
+ *Return: x
+ */
+unsigned int _strspn(char *s, char *accept)
+{
+
+	unsigned int c = 0;
+
+	while (*s != '\0')
+	{
+		char *acc = accept;
+
+		while (*acc != '\0')
+		{
+			if (*s == *acc)
+			{   c++;
+				break;
+			}
+			acc++;
+		}
+		if (*acc == '\0')
+		{
+			break;
+
+		}
+		s++;
+	}
+	return (c);
+}
+
+
+4-isalpha.c/    0           0     0     644     253       `
+#include "main.h"
+/**
+ *_isalpha - checks for the alphabetic character
+ *
+ *@y: the character the function is going to check
+ *
+ *Return: 1 if y is a letter else 0
+ */
+int _isalpha(int y)
+{
+	return  ((y >= 'a' && y <= 'z') || (y >= 'A' && y <= 'Z'));
+}
+
+4-strpbrk.c/    0           0     0     644     420       `
+#include "main.h"
+#include <stddef.h>
+/**
+ *_strpbrk - function that searches a string for any of a set of bytes.
+ *
+ *@s: holds bytes in string accept
+ *@accept: represents a string
+ * Return: s otherwise NULL
+ *
+ */
+char *_strpbrk(char *s, char *accept)
+{
+
+	while (*s != '\0')
+	{
+		char *c = accept;
+
+		while (*c != '\0')
+		{
+
+			if (*s == *c)
+			{
+				return (s);
+
+			}
+
+			c++;
+
+		}
+
+		s++;
+
+	}
+
+	return (NULL);
+
+}
+
+5-strstr.c/     0           0     0     644     454       `
+#include "main.h"
+#include <stddef.h>
+/**
+ * _strstr - function that locates a substring.
+ *@haystack: string
+ *@needle: substring
+ *Return: haystack otherwise NULL
+ *
+ */
+char *_strstr(char *haystack, char *needle)
+{
+	while (*haystack != '\0')
+	{
+		char *hay = haystack;
+		char *ned = needle;
+
+		while (*ned != '\0' && *hay == *ned)
+		{
+			hay++;
+			ned++;
+
+		}
+
+		if (*ned == '\0')
+		{
+			return (haystack);
+
+		}
+		haystack++;
+
+	}
+
+	return (NULL);
+}
+
+
+6-abs.c/        0           0     0     644     219       `
+#include "main.h"
+/**
+ *_abs - this function computes the absolute value of an integer
+ *
+ *@b: is the integer to check
+ *
+ *Return: Absolute value
+ */
+int _abs(int b)
+{
+	if (b >= 0)
+	{
+		return (b);
+	}
+	return (-b);
+}
+
+9-strcpy.c/     0           0     0     644     358       `
+#include "main.h"
+
+/**
+ *char*_strcpy - a function that copies the string pointed to by src
+ *
+ *@dest: copy to this
+ *
+ *@src: copy from this
+ *
+ *Return: a string
+ */
+char *_strcpy(char *dest, char *src)
+{
+	int x = 0;
+
+	int y = 0;
+
+	while (*(src + x) != '\0')
+	{
+		x++;
+	}
+	for (; y < x; y++)
+	{
+		dest[y] = src[y];
+	}
+	dest[x] = '\0';
+
+	return (dest);
+
+}
+main.c/         0           0     0     644     142       `
+#include "main.h"
+
+int main(void)
+{
+	_puts("\"At the end of the day, my goal was to be the best hacker\"\n\t- Kevin Mitnick");
+	return (0);
+}
+_putchar.c/     0           0     0     644     247       `
+#include <unistd.h>
+
+/**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
+
