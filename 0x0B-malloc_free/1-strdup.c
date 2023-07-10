@@ -27,6 +27,9 @@ char *_strdup(char *str)
 			return (NULL);
 		}
 	} while (str[x] != '\0');
+
+	y = 0;
+
 	for (y = 0; str[y]; y++)
 	{
 		ptr[y] = str[y];
