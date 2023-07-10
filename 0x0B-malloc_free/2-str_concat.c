@@ -28,7 +28,6 @@ char *str_concat(char *s1, char *s2)
 	{
 		return (NULL);
 	}
-	x = y = 0;
 	do {
 		ptr[x] = s1[x];
 		x++;
