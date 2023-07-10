@@ -9,36 +9,35 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	int x, y;
-	char *ptr;
+	unsigned int a, b, si = 0;
+	char *str;
 
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
-	x = 0, y = 0;
-	do {
-		x++;
-	} while (s1[x] != '\0');
-	do {
-		y++;
-	} while (s2[y] != '\0');
-	ptr = malloc((x + y + 1) * sizeof(char));
-	if (ptr == NULL)
-	{
+	if (s1 != NULL)
+		for (a = 0; s1[a] != '\0'; a++)
+			si++;
+	if (s2 != NULL)
+		for (a = 0; s2[a] != '\0'; a++)
+			si++;
+	str = malloc(sizeof(char) * (si + 1));
+	if (str == NULL)
 		return (NULL);
+	if (s1 == NULL && s2 == NULL)
+	{
+		str[0] = '\0';
+		return (str);
 	}
-	do {
-		ptr[x] = s1[x];
-		x++;
-	} while (s1[x] != '\0');
-
-	do {
-		ptr[x] = s2[y];
-		x++, y++;
-	} while (s2[y] != '\0');
-
-	ptr[x] = '\0';
-
-	return (ptr);
+	if (s1 != NULL)
+		for (a = 0; s1[a] != '\0'; a++)
+			str[a] = s1[a];
+	if (s1 == NULL)
+		a = 0;
+	if (s2 != NULL)
+		for (b = 0; s2[b] != '\0'; b++)
+		{
+			str[a] = s2[b];
+			a++;
+		}
+	str[si] = '\0';
+	return (str);
 }
+
