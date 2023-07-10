@@ -23,13 +23,11 @@ char *_strdup(char *str)
 
 		x++;
 
+		if (ptr == NULL)
+		{
+			return (NULL);
+		}
 	}
-
-	if (ptr == NULL)
-	{
-		return (NULL);
-	}
-
 	for (y = 0; str[y]; y++)
 	{
 		ptr[y] = str[y];
