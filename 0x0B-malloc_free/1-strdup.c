@@ -20,29 +20,25 @@ char *_strdup(char *str)
 	do {
 
 
-		ptr = (char *)malloc(sizeof(char) * (x + 1));
+		ptr = (char *)malloc(sizeof(char) * (x + 1);
+				x++;
 
+				} while (str[x] != '\0');
 
+				if (ptr == NULL)
+				{
+				return (NULL);
+				}
 
-		if (ptr == NULL)
-		{
-			return (NULL);
-		}
+				y = 0;
 
-		x++;
+				for (y = 0; str[y]; y++)
+				{
+				ptr[y] = str[y];
 
+				}
 
-	} while (str[x] != '\0');
-
-	y = 0;
-
-	for (y = 0; str[y]; y++)
-	{
-		ptr[y] = str[y];
-
-	}
-
-	return (ptr);
+				return (ptr);
 
 
 
