@@ -31,16 +31,18 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (!c)
 		return (NULL);
 
-	do {
+	for (; a < lengthA; a++)
 		c[a] = s1[a];
-		a++;
-	} while (a < lengthA);
 	do {
 		c[a++] = s2[b++];
 	} while (n < lengthB && a < (lengthA + n));
+
 	do {
+
 		c[a++] = s2[b++];
+
 	} while (n >= lengthB && a < (lengthA + lengthB));
+
 	c[a] = '\0';
 	return (c);
 }
