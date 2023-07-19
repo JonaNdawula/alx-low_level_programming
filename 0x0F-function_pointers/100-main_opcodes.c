@@ -29,15 +29,10 @@ int main(int argc, char *argv[])
 	array = (char *)main;
 
 	x = 0;
-	while (x < byts)
+	while (x < byts - 1)
 	{
 
-		if (x == byts - 1)
-		{
-			printf("%02hhx\n", array[x]);
-			break;
-		}
-		printf("%02hhx", array[x]);
+		printf("%02hhx ", array[x]);
 		x++;
 
 	}
