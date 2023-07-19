@@ -36,5 +36,6 @@ int main(int argc, char *argv[])
 		x++;
 
 	}
+	printf("%02hhx\n", array[x]);
 	return (0);
 }
