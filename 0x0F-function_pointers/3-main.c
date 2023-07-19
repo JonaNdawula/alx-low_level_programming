@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 	int2 = atoi(argv[3]);
 
 
-	if (get_op_func(operator) == NULL || op[1] != '\0')
+	if (get_op_func(op) == NULL || op[1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
