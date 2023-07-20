@@ -36,11 +36,11 @@ void print_all(const char * const format, ...)
 					st = "(nil)";
 					printf("%s%s", separator, st);
 					break;
-					default:
+				default:
 					ind++;
 					continue;
 			}
-					separator = ",";
+					separator = ", ";
 					ind++;
 		}
 	}
