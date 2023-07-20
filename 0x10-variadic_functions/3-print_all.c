@@ -34,7 +34,6 @@ void print_all(const char * const format, ...)
 					st = va_arg(argList, char *);
 					if (!st)
 					st = "(nil)";
-					else
 					printf("%s%s", separator, st);
 					break;
 					default:
