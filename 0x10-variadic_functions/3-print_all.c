@@ -41,7 +41,7 @@ void print_all(const char * const format, ...)
 					ind++;
 					continue;
 			}
-					separator = ", ";
+					separator = ",";
 					ind++;
 		}
 	}
