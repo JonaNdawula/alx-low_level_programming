@@ -13,20 +13,20 @@ size_t print_listint_safe(const listint_t *head)
 
 	if (nods == 0)
 	{
-		while (head != NULL)
+		for (; head != NULL; nods++)
 		{
 			printf("[%p] %d\n", (void *)head, head->n);
 			head = head->next;
-			nods++;
+
 		}
 	}
 	else
 	{
-		while (index < nods)
+		for (index = 0; index < nods; index++)
 		{
 			printf("[%p] %d\n", (void *)head, head->n);
 			head = head->next;
-			index++;
+
 		}
 		printf("-> [%p] %d\n", (void *)head, head->n);
 	}
@@ -47,7 +47,6 @@ size_t loop_length(const listint_t *head)
 {
 
 	const listint_t *slow, *fast;
-
 	size_t nods = 1;
 
 	if (head == NULL || head->next == NULL)
@@ -56,24 +55,28 @@ size_t loop_length(const listint_t *head)
 	slow = head->next;
 	fast = (head->next)->next;
 
-
-	for (; fast; nods++)
+	while (fast)
 	{
 		if (slow == fast)
 		{
 			slow = head;
-			for (; slow != fast; nods++)
+			while (slow != fast)
+			{
+				nods++;
 				slow = slow->next;
-			fast = fast->next;
-
+				fast = fast->next;
+			}
 			slow = slow->next;
-			for (; slow != fast; nods++)
+			while (slow != fast)
+			{
+				nods++;
 				slow = slow->next;
-
+			}
 			return (nods);
 		}
 		slow = slow->next;
 		fast = (fast->next)->next;
+
 	}
 	return (0);
 }
