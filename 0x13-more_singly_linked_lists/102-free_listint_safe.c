@@ -25,11 +25,13 @@ size_t free_listint_safe(listint_t **h)
 			temp_node = (*h)->next;
 			free(*h);
 			*h = temp_node;
+			length++;
 		}
 		else
 		{
 			free(*h);
 			*h = NULL;
+				length++;
 			break;
 
 		}
