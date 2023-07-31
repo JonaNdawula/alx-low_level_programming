@@ -3,8 +3,8 @@
  *find_listint_loop -  a function that finds the loop in a linked list.
  *@head: linked list to search
  *
- *Return: an address of the node where the loop starts, 
- * 
+ *Return: an address of the node where the loop starts,
+ *
  */
 listint_t *find_listint_loop(listint_t *head)
 {
@@ -22,16 +22,17 @@ listint_t *find_listint_loop(listint_t *head)
 		slow = slow->next;
 		fast = fast->next->next;
 		if (fast == slow)
-	{			
+	{
+		slow = head;
 		for (; slow != fast;)
 		{
 			slow = slow->next;
 			fast = fast->next;
-		
+
 		}
 
 		return (fast);
-	
+
 	}
 
    }
