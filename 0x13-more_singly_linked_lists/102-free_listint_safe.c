@@ -11,7 +11,7 @@ size_t free_listint_safe(listint_t **h)
 
 	int subt;
 	size_t length;
-	list_t *temp_node;
+	listint_t *temp_node;
 
 	if (h == NULL || *h == NULL)
 		return (0);
