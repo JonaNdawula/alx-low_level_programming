@@ -10,13 +10,13 @@ size_t free_listint_safe(listint_t **h)
 {
 
 	int subt;
-	size_t length;
+	size_t length = 0;
 	listint_t *temp_node;
 
 	if (h == NULL || *h == NULL)
 		return (0);
 
-	for (length = 0; *h; length++)
+	while (*h)
 	{
 		subt = *h - (*h)->next;
 
@@ -31,7 +31,7 @@ size_t free_listint_safe(listint_t **h)
 		{
 			free(*h);
 			*h = NULL;
-				length++;
+			length++;
 			break;
 
 		}
