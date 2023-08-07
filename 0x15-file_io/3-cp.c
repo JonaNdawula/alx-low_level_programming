@@ -89,7 +89,7 @@ void closeFile(int fileDesc)
 
 	if (cls == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Error: Can't close fd  %d\n", fileDesc);
+		dprintf(STDERR_FILENO, "Error: Error: Can't close fd %d\n", fileDesc);
 		exit(100);
 	}
 
