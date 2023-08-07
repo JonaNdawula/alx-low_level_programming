@@ -27,21 +27,25 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 	}
 
+
 	length = strlen(text_content);
 
 	wr = write(fileDef, text_content, length);
 
 	if (text_content != NULL)
 	{
+
 		if (wr == -1)
 		{
 			close(fileDef);
-
 			return (-1);
 		}
-
 	}
 
-	close(fileDef);
-	return (1);
+	if (close(fileDef == -1))
+	{
+			return (-1);
+	}
+
+			return (1);
 }
