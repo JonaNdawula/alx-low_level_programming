@@ -11,8 +11,7 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int fileDef;
-	ssize_t length = 0, wr;
+	int fileDef, length = 0, wr;
 
 
 	if (filename  == NULL)
@@ -44,8 +43,8 @@ int create_file(const char *filename, char *text_content)
 
 	if (close(fileDef == -1))
 	{
-			return (-1);
+		return (-1);
 	}
 
-			return (1);
+	return (1);
 }
