@@ -15,16 +15,16 @@ int main(int argc, char *argv[])
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-				exit(97);
+		exit(97);
 	}
-				buff = newBuffer(argv[2]);
+	buff = newBuffer(argv[2]);
 
-				frFile = open(argv[1], O_RDONLY);
+	frFile = open(argv[1], O_RDONLY);
 
-				rd = read(frFile, buff, 1024);
-				toFile = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	while (rd > 0)
-	{
+	rd = read(frFile, buff, 1024);
+	toFile = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+
+	do {
 		if (frFile == -1 || rd == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
@@ -34,20 +34,20 @@ int main(int argc, char *argv[])
 
 		wr = write(toFile, buff, rd);
 
-	   if (toFile == -1 || wr == -1)
-	   {
-		  dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		  free(buff);
-		  exit(99);
-	   }
-	   rd= read(frFile, buff, 1024);
-	  toFile = open(argv[2], O_WRONLY | O_APPEND);
-	  }
-		free(buff);
-		closeFile(frFile);
-		closeFile(toFile);
+		if (toFile == -1 || wr == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			free(buff);
+			exit(99);
+		}
+		rd = read(frFile, buff, 1024);
+		toFile = open(argv[2], O_WRONLY | O_APPEND);
+	} while (rd > 0);
+	free(buff);
+	closeFile(frFile);
+	closeFile(toFile);
 
-		return (0);
+	return (0);
 }
 
 /**
