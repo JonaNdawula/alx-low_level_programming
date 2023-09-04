@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage:cp file_from file_to\n");
 		exit(97);
 	}
 	buff = newBuffer(argv[2]);
@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 
 		if (frFile == -1 || rd == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: can't read from file %s\n", argv[1]);
+			dprintf(STDERR_FILENO, "Error:Can't read from file %s\n", argv[1]);
 			free(buff);
 			exit(98);
 		}
@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 
 		if (toFile == -1 || wr == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: can't write to %s\n", argv[2]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			free(buff);
 			exit(99);
 		}
@@ -67,7 +67,7 @@ char *newBuffer(char *nfile)
 
 	if (buff == NULL)
 	{
-		dprintf(STDERR_FILENO, "Error: can't write to %s\n", nfile);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", nfile);
 		exit(99);
 	}
 
@@ -87,7 +87,7 @@ void closeFile(int fileDesc)
 
 	if (cls == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: can't close fd %d\n", fileDesc);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fileDesc);
 		exit(100);
 	}
 
