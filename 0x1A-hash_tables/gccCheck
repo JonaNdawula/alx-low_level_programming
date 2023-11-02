@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "enter main file"
+read  mainc
+
+echo "enter c file"
+read cfile
+
+echo "enter object file"
+read objf
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 $mainc.c $cfile.c -o $objf
