@@ -4,11 +4,12 @@ The island_perimeter function which
 returns the perimeter of the island described in grid
 """
 
+
 def island_perimeter(grid):
     """
     Returns the perimeter of the island described in grid
     """
-    grid_height =  len(grid)
+    grid_height = len(grid)
     grid_width = len(grid[0])
     total_edges = 0
     total_cells = 0
